@@ -1,0 +1,433 @@
+/* ==========================================================================
+   admin.css  -  styling for the content dashboard.
+
+   This is a tool, not the public-facing brand, so it stays plain and
+   functional on purpose - system fonts, no imagery, nothing to load.
+   It reuses the same core colours as the main site so it doesn't feel
+   like a totally different product.
+   ========================================================================== */
+
+:root {
+  --night: #14231c;
+  --oxblood: #5a1b20;
+  --paper: #f7f7f1;
+  --line: #d8d5c9;
+  --muted: #6b6b62;
+  --error: #a3262b;
+  --success: #1f5a34;
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--paper);
+  color: var(--night);
+  line-height: 1.5;
+}
+
+/* ---------- Header ---------- */
+.admin-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem clamp(1rem, 4vw, 2.5rem);
+  background: var(--night);
+  color: var(--paper);
+}
+
+.admin-header h1 {
+  margin: 0 0 0.2rem;
+  font-size: 1.4rem;
+}
+
+.admin-header p {
+  margin: 0;
+  color: rgba(247, 247, 241, 0.7);
+  font-size: 0.9rem;
+}
+
+.view-site-link {
+  color: var(--paper);
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.view-site-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  padding: 1rem 1.1rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  border-bottom-color: var(--oxblood);
+  color: var(--night);
+}
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.panel-intro {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.panel-intro code {
+  padding: 0.1rem 0.35rem;
+  background: #efece2;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+/* ---------- Cards (one steak, or one café menu group) ---------- */
+.card-list {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.edit-card {
+  padding: 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.edit-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.edit-card-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.edit-card label {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.edit-card input,
+.edit-card textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--night);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.edit-card textarea {
+  resize: vertical;
+}
+
+.edit-card input:focus,
+.edit-card textarea:focus {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 1px;
+}
+
+/* ---------- Café menu groups (title + a list of items) ---------- */
+.group-card .edit-card-head input {
+  margin: 0;
+  border: 0;
+  background: none;
+  padding: 0.2rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.items-list {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.item-row {
+  display: grid;
+  grid-template-columns: 1.4fr 5.5rem 1.8fr auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.item-row input {
+  margin: 0;
+}
+
+/* ---------- Buttons ---------- */
+.add-btn,
+.add-item-btn {
+  padding: 0.6rem 1rem;
+  border: 1px dashed var(--muted);
+  border-radius: 3px;
+  background: none;
+  color: var(--night);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-btn:hover,
+.add-item-btn:hover {
+  border-color: var(--oxblood);
+  color: var(--oxblood);
+}
+
+.add-item-btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+}
+
+.remove-btn {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: none;
+  color: var(--error);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.remove-btn:hover {
+  background: var(--error);
+  color: #fff;
+}
+
+.remove-btn.small {
+  padding: 0.3rem 0.6rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.save-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.save-btn {
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--oxblood);
+  border-radius: 3px;
+  background: var(--oxblood);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: transparent;
+  color: var(--oxblood);
+}
+
+.save-btn[disabled] {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.save-status {
+  margin: 0;
+  font-weight: 500;
+}
+
+.save-status:empty {
+  display: none;
+}
+
+.save-status.is-success { color: var(--success); }
+.save-status.is-error   { color: var(--error); }
+
+/* ---------- Opening hours ---------- */
+.hours-editor {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.hours-row {
+  display: grid;
+  grid-template-columns: 6rem 1fr 1fr;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.hours-day {
+  font-weight: 700;
+}
+
+.hours-row input {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.hours-row input:focus {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 1px;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 40rem) {
+  .item-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "name price" "desc desc" "remove remove";
+  }
+  .item-row input:nth-child(1) { grid-area: name; }
+  .item-row input:nth-child(2) { grid-area: price; }
+  .item-row input:nth-child(3) { grid-area: desc; }
+  .item-row .remove-btn { grid-area: remove; justify-self: start; }
+
+  .hours-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* ---------- Reservations (read-only list, not a form) ---------- */
+.reservations-summary {
+  margin: -0.5rem 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.reservations-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.reservation-card {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--oxblood);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.reservation-card.is-past {
+  border-left-color: var(--line);
+  opacity: 0.6;
+}
+
+.reservation-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.reservation-name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.past-badge {
+  padding: 0.1rem 0.5rem;
+  border-radius: 2px;
+  background: var(--line);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.reservation-head .remove-btn {
+  margin-left: auto;
+}
+
+.reservation-meta {
+  margin: 0 0 0.3rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.reservation-contact {
+  margin: 0 0 0.3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.reservation-notes {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.reservation-received {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.empty-state {
+  padding: 2rem 1rem;
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+  color: var(--muted);
+  text-align: center;
+}

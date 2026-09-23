@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Content dashboard | Cinder &amp; Salt</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <header class="admin-header">
+    <div>
+      <h1>Content dashboard</h1>
+      <p>Edit what shows up on the website. Each section saves on its own.</p>
+    </div>
+    <!-- This points at your WEBSITE's own local server (see the project README
+         for how to start it with "npx serve -l 5500"), not this backend server -
+         they're two separate things running on two separate addresses. If you
+         serve your site on a different port, update the address below to match. -->
+    <a class="view-site-link" href="http://localhost:5500/" target="_blank" rel="noopener">View the live site &rarr;</a>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button type="button" class="tab-btn active" data-tab="cuts" role="tab" aria-selected="true">Our cuts</button>
+    <button type="button" class="tab-btn" data-tab="cafe" role="tab" aria-selected="false">Café menu</button>
+    <button type="button" class="tab-btn" data-tab="hours" role="tab" aria-selected="false">Opening hours</button>
+    <button type="button" class="tab-btn" data-tab="reservations" role="tab" aria-selected="false">Reservations</button>
+  </nav>
+
+  <main>
+
+    <!-- ======================= OUR CUTS ======================= -->
+    <section id="tab-cuts" class="tab-panel active">
+      <p class="panel-intro">One card per steak. Fields match what shows on the website: name, weight, price, description, and the image file.</p>
+      <div id="cuts-list" class="card-list"></div>
+      <button type="button" id="add-cut" class="add-btn">+ Add another cut</button>
+      <div class="save-row">
+        <button type="button" id="save-cuts" class="save-btn">Save cuts</button>
+        <p class="save-status" id="cuts-status" role="status"></p>
+      </div>
+    </section>
+
+    <!-- ======================= CAFÉ MENU ======================= -->
+    <section id="tab-cafe" class="tab-panel">
+      <p class="panel-intro">Grouped the same way as the website (Coffee, From the oven, Brunch...). Add or remove groups and items freely.</p>
+      <div id="cafe-groups" class="card-list"></div>
+      <button type="button" id="add-group" class="add-btn">+ Add a menu group</button>
+      <div class="save-row">
+        <button type="button" id="save-cafe" class="save-btn">Save café menu</button>
+        <p class="save-status" id="cafe-status" role="status"></p>
+      </div>
+    </section>
+
+    <!-- ======================= OPENING HOURS ======================= -->
+    <section id="tab-hours" class="tab-panel">
+      <p class="panel-intro">Use a time range like <code>07:30–15:00</code>, or type <code>Closed</code>. The days themselves can't be reordered or renamed.</p>
+      <div id="hours-list" class="hours-editor"></div>
+      <div class="save-row">
+        <button type="button" id="save-hours" class="save-btn">Save opening hours</button>
+        <p class="save-status" id="hours-status" role="status"></p>
+      </div>
+    </section>
+
+    <!-- ======================= RESERVATIONS ======================= -->
+    <section id="tab-reservations" class="tab-panel">
+      <p class="panel-intro">Every booking request sent through the website, soonest first. This list is just for viewing and clearing out old ones - it's not editable.</p>
+      <p class="reservations-summary" id="reservations-summary"></p>
+      <div id="reservations-list" class="reservations-list"></div>
+    </section>
+
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

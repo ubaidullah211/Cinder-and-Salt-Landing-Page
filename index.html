@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cinder &amp; Salt | Dry-aged steakhouse and café</title>
+  <meta name="description" content="Wood-fire steaks dry-aged for 45 days, and a café serving coffee, pastries and brunch. Book a table at Cinder &amp; Salt.">
+  <meta name="theme-color" content="#14231c">
+
+  <!-- Link preview when the site is shared (WhatsApp, Facebook, LinkedIn...).
+       After you deploy, change the image address below to the full https:// address. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cinder &amp; Salt | Dry-aged steakhouse and café">
+  <meta property="og:description" content="Wood-fire steaks dry-aged for 45 days, and a café for slow mornings.">
+  <meta property="og:image" content="images/social/og-image.webp">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Gloock for headlines, Hanken Grotesk for everything else -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sections.css">
+
+  <!-- Structured data: helps Google show the restaurant details in search results.
+       Replace the details with your real ones. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Cinder & Salt",
+    "servesCuisine": ["Steakhouse", "Café"],
+    "priceRange": "$$$",
+    "telephone": "+1-555-014-2290",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "42 Foundry Lane",
+      "addressLocality": "Old Mill District"
+    }
+  }
+  </script>
+</head>
+
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ======================= HEADER / NAVIGATION ======================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Cinder &amp; Salt, back to the top">Cinder &amp; Salt</a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#cuts">Our cuts</a></li>
+          <li><a href="#cafe">Café</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#hours">Hours</a></li>
+          <li><a href="#location">Find us</a></li>
+        </ul>
+        <a class="btn btn--primary" href="#reserve">Book a table</a>
+      </nav>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image"
+           src="images/hero/hero.webp"
+           alt="A thick steak searing over glowing charcoal"
+           width="2400" height="1350"
+           fetchpriority="high">
+      <div class="hero-shade"></div>
+
+      <div class="container hero-content">
+        <h1 class="hero-title" id="hero-title">
+          <span>Aged for weeks.</span>
+          <span>Cooked in minutes.</span>
+        </h1>
+        <p class="hero-lead">Wood-fire steaks after dark. Coffee and fresh pastries until mid-afternoon. One room on Foundry Lane.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="#reserve">Book a table</a>
+          <a class="btn btn--ghost" href="#cuts">See the cuts</a>
+        </div>
+      </div>
+
+      <div class="hero-bar">
+        <div class="container hero-bar-inner">
+          <p class="hero-status" id="hero-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span id="hero-status-text">See our opening hours below.</span>
+          </p>
+          <a class="hero-address" href="#location">42 Foundry Lane, Old Mill District</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================== ABOUT US ========================== -->
+    <section class="section theme-paper" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+
+        <div class="about-images">
+          <img class="about-image-large"
+               src="images/about/chef-at-grill.webp"
+               alt="Chef Marcus Hale turning a steak on the charcoal grill"
+               width="1000" height="1250" loading="lazy" decoding="async">
+          <img class="about-image-small"
+               src="images/about/aging-cellar.webp"
+               alt="Whole cuts of beef hanging in the dry-aging cellar"
+               width="800" height="800" loading="lazy" decoding="async">
+        </div>
+
+        <div class="about-text">
+          <h2 class="section-title" id="about-title">We started with six stools and a charcoal grill.</h2>
+          <p class="about-lead">In 2016, Marcus Hale turned a corner butcher's counter into a steakhouse. He had spent ten years cooking in other people's kitchens and wanted one where the beef did the talking.</p>
+          <p>We still buy whole cuts of beef from three family farms within 150 miles, age them for 45 days in our salt-brick cellar, and cook everything over oak and charcoal. The only seasoning is sea salt.</p>
+          <p>By morning the same room becomes a café. The oven that bakes our dinner rolls also bakes the croissants, and you never need a reservation.</p>
+          <blockquote class="about-quote">
+            <p>Nothing fancy happens to the meat. It gets time, heat and salt.</p>
+            <footer>Marcus Hale, chef and owner</footer>
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================== OUR CUTS ========================== -->
+    <section class="section theme-night" id="cuts" aria-labelledby="cuts-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="cuts-title">Our cuts</h2>
+          <p class="section-intro">Every steak is dry-aged in our cellar for 45 days, seasoned with sea salt and cooked over oak and charcoal. Tap a cut to see it.</p>
+        </div>
+
+        <!-- The rows are drawn here by JavaScript (see js/main.js) -->
+        <div class="cuts-board" id="cuts-board">
+          <noscript><p>Please turn on JavaScript to see our cuts, or call us on +1 (555) 014-2290.</p></noscript>
+        </div>
+
+        <p class="cuts-note">Every cut comes with bone-marrow butter and one side. We cook to your taste, and we suggest medium-rare.</p>
+      </div>
+    </section>
+
+
+    <!-- ============================= CAFÉ ============================= -->
+    <section class="section theme-kraft" id="cafe" aria-labelledby="cafe-title">
+      <div class="container cafe-grid">
+
+        <div class="cafe-images">
+          <img class="cafe-image-large"
+               src="images/cafe/cafe-interior.webp"
+               alt="Morning light in the café, with the barista pouring coffee at the counter"
+               width="1000" height="1250" loading="lazy" decoding="async">
+          <img class="cafe-image-small"
+               src="images/cafe/coffee-and-pastry.webp"
+               alt="A flat white with latte art beside an almond croissant"
+               width="800" height="800" loading="lazy" decoding="async">
+        </div>
+
+        <div class="cafe-body">
+          <h2 class="section-title" id="cafe-title">By day, it's a café.</h2>
+          <p class="cafe-intro">Come in for a flat white and a croissant, or stay for eggs on sourdough. Everything is baked and made here, and you never need to book.</p>
+
+          <!-- The menu groups are drawn here by JavaScript -->
+          <div class="cafe-menu" id="cafe-menu">
+            <noscript><p>Please turn on JavaScript to see the café menu.</p></noscript>
+          </div>
+
+          <p class="cafe-note">Walk-ins welcome. Last orders are 30 minutes before we close.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================== GALLERY ========================== -->
+    <section class="section theme-night-2" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="gallery-title">A look inside</h2>
+          <p class="section-intro">From the first coffee to the last glass of wine. Tap any photo to see it larger.</p>
+        </div>
+
+        <!-- The photos are drawn here by JavaScript -->
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+
+    <!-- ======================== OPENING HOURS ======================== -->
+    <section class="section theme-oxblood" id="hours" aria-labelledby="hours-title">
+      <div class="container hours-grid">
+
+        <div class="hours-intro">
+          <h2 class="section-title" id="hours-title">Opening hours</h2>
+          <p>The café runs from morning to mid-afternoon, and the steakhouse takes over at night. The kitchen takes its last orders 30 minutes before closing.</p>
+          <p class="hours-note">Holiday hours are posted on our Instagram.</p>
+        </div>
+
+        <div class="hours-table-wrap">
+          <table class="hours-table">
+            <caption class="visually-hidden">Opening hours for the café and the steakhouse, day by day</caption>
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Café</th>
+                <th scope="col">Steakhouse</th>
+              </tr>
+            </thead>
+            <!-- The rows are drawn here by JavaScript -->
+            <tbody id="hours-body"></tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= RESERVATION / CONTACT (CTA) ================= -->
+    <section class="section theme-paper" id="reserve" aria-labelledby="reserve-title">
+      <div class="container reserve-grid">
+
+        <div class="reserve-intro">
+          <h2 class="section-title" id="reserve-title">Book a table</h2>
+          <p>Tell us when you'd like to come and we'll confirm by email, usually within a few hours. For parties of nine or more, or private dining, please call us.</p>
+
+          <ul class="contact-list">
+            <li><span class="contact-label">Call us</span> <a href="tel:+15550142290">+1 (555) 014-2290</a></li>
+            <li><span class="contact-label">Email</span> <a href="mailto:hello@cinderandsalt.example">hello@cinderandsalt.example</a></li>
+            <li><span class="contact-label">Visit</span> 42 Foundry Lane, Old Mill District</li>
+          </ul>
+        </div>
+
+        <!-- "novalidate" turns off the browser's own pop-up errors, because
+             we show our own, nicer messages (see js/main.js). -->
+        <form class="reserve-form" id="reserve-form" novalidate>
+          <div class="form-grid">
+
+            <div class="field field--full">
+              <label for="f-name">Full name</label>
+              <input type="text" id="f-name" name="name" autocomplete="name" maxlength="80" required aria-describedby="name-error">
+              <p class="field-error" id="name-error"></p>
+            </div>
+
+            <div class="field field--half">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" autocomplete="email" maxlength="120" required aria-describedby="email-error">
+              <p class="field-error" id="email-error"></p>
+            </div>
+
+            <div class="field field--half">
+              <label for="f-phone">Phone (optional)</label>
+              <input type="tel" id="f-phone" name="phone" autocomplete="tel" maxlength="20" aria-describedby="phone-error">
+              <p class="field-error" id="phone-error"></p>
+            </div>
+
+            <div class="field field--third">
+              <label for="f-date">Date</label>
+              <input type="date" id="f-date" name="date" required aria-describedby="date-error">
+              <p class="field-error" id="date-error"></p>
+            </div>
+
+            <div class="field field--third">
+              <label for="f-time">Time</label>
+              <select id="f-time" name="time" required aria-describedby="time-error">
+                <option value="" selected disabled>Select</option>
+                <!-- the times are added by JavaScript from CONFIG.timeSlots -->
+              </select>
+              <p class="field-error" id="time-error"></p>
+            </div>
+
+            <div class="field field--third">
+              <label for="f-guests">Guests</label>
+              <select id="f-guests" name="guests" required aria-describedby="guests-error">
+                <option value="" selected disabled>Select</option>
+                <!-- the numbers are added by JavaScript from CONFIG.maxGuests -->
+              </select>
+              <p class="field-error" id="guests-error"></p>
+            </div>
+
+            <div class="field field--full">
+              <label for="f-notes">Anything we should know? (optional)</label>
+              <textarea id="f-notes" name="notes" rows="3" maxlength="500" aria-describedby="notes-error"></textarea>
+              <p class="field-error" id="notes-error"></p>
+            </div>
+
+            <!-- SPAM TRAP (honeypot): hidden from people, but bots fill it in. -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="f-website">Leave this field empty</label>
+              <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+          </div>
+
+          <div class="form-footer">
+            <button class="btn btn--primary" type="submit">Send booking request</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+          <p class="form-fineprint">We only use your details to reply to this request.</p>
+        </form>
+
+      </div>
+    </section>
+
+
+    <!-- ======================== LOCATION / MAP ======================== -->
+    <section class="section theme-night" id="location" aria-labelledby="location-title">
+      <div class="container location-grid">
+
+        <div class="map-frame">
+          <!-- OpenStreetMap needs no account or API key.
+               To change the place: open openstreetmap.org, find your address,
+               click Share, choose "HTML", and paste the new iframe address here. -->
+          <iframe
+            title="Map showing the restaurant's location"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0078%2C40.7371%2C-73.9958%2C40.7451&amp;layer=mapnik&amp;marker=40.7411%2C-74.0018"
+            loading="lazy"
+            referrerpolicy="no-referrer"></iframe>
+        </div>
+
+        <div class="location-info">
+          <h2 class="section-title" id="location-title">Find us</h2>
+          <address>
+            42 Foundry Lane<br>
+            Old Mill District
+          </address>
+
+          <dl class="location-details">
+            <dt>Parking</dt>
+            <dd>Free two-hour street parking. Valet on Friday and Saturday evenings.</dd>
+            <dt>Transit</dt>
+            <dd>Foundry Lane tram stop is a two-minute walk away.</dd>
+            <dt>Access</dt>
+            <dd>Step-free entrance and an accessible restroom.</dd>
+          </dl>
+
+          <a class="btn btn--primary"
+             href="https://www.google.com/maps/dir/?api=1&amp;destination=40.7411,-74.0018"
+             target="_blank" rel="noopener noreferrer">Get directions</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a class="logo" href="#top">Cinder &amp; Salt</a>
+          <p>A wood-fire steakhouse at night and a café by day.</p>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Visit</h2>
+          <address>
+            42 Foundry Lane<br>
+            Old Mill District<br>
+            <a href="tel:+15550142290">+1 (555) 014-2290</a>
+          </address>
+          <p class="footer-hours">Café every day, steakhouse Tuesday to Sunday.</p>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Explore</h2>
+          <ul class="footer-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#cuts">Our cuts</a></li>
+            <li><a href="#cafe">Café</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reserve">Book a table</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Follow</h2>
+          <!-- Replace these with your real profile addresses -->
+          <ul class="footer-list">
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Google reviews</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Cinder &amp; Salt. All rights reserved.</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ======================= PHOTO VIEWER (LIGHTBOX) =======================
+       Hidden until a gallery photo is chosen. Controlled by js/main.js. -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lightbox-button lightbox-close" type="button" aria-label="Close photo viewer">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <button class="lightbox-button lightbox-prev" type="button" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-image" src="" alt="">
+      <figcaption>
+        <span id="lightbox-caption"></span>
+        <span class="lightbox-counter" id="lightbox-counter"></span>
+      </figcaption>
+    </figure>
+    <button class="lightbox-button lightbox-next" type="button" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </dialog>
+
+
+  <!-- Scripts go last so the HTML above is ready when they run.
+       The ORDER matters: data -> components -> main. -->
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

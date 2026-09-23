@@ -1,0 +1,80 @@
+{
+  "cuts": [
+    {
+      "name": "The Tomahawk",
+      "weight": "40 oz, serves two",
+      "price": 128,
+      "description": "A bone-in ribeye with the long bone left on, carved at your table. Deep, beefy and rich. This is the one to share.",
+      "image": "images/cuts/tomahawk.webp",
+      "imageAlt": "A bone-in tomahawk steak resting on a wooden board with rosemary and coarse salt"
+    },
+    {
+      "name": "Ribeye",
+      "weight": "14 oz",
+      "price": 54,
+      "description": "The most marbled cut we serve. The fat melts into the meat over the charcoal and leaves a dark, savory crust.",
+      "image": "images/cuts/ribeye.webp",
+      "imageAlt": "A thick ribeye steak with a dark crust and melting butter"
+    },
+    {
+      "name": "Fillet",
+      "weight": "8 oz",
+      "price": 52,
+      "description": "Lean, tender and mild. We cut it thick so the middle stays juicy while the outside picks up the smoke.",
+      "image": "images/cuts/fillet.webp",
+      "imageAlt": "A tall, round fillet steak on a dark plate"
+    },
+    {
+      "name": "Sirloin",
+      "weight": "12 oz",
+      "price": 46,
+      "description": "Firm, properly beefy, with a strip of fat along the edge that crisps on the grill. The one our regulars order most.",
+      "image": "images/cuts/sirloin.webp",
+      "imageAlt": "A sirloin steak with a crisp fat cap on a wooden board"
+    },
+    {
+      "name": "T-Bone",
+      "weight": "22 oz",
+      "price": 72,
+      "description": "A strip on one side of the bone and a fillet on the other. Two textures in one cut, for a big appetite.",
+      "image": "images/cuts/t-bone.webp",
+      "imageAlt": "A T-bone steak showing the strip and the fillet either side of the bone"
+    }
+  ],
+  "cafeMenu": [
+    {
+      "title": "Coffee",
+      "items": [
+        { "name": "Espresso", "price": 3.5, "description": "Double shot, roasted weekly by a small roaster nearby." },
+        { "name": "Flat white", "price": 4.75, "description": "Double ristretto with silky steamed milk." },
+        { "name": "Cold brew", "price": 5, "description": "Steeped for 18 hours, served over ice." },
+        { "name": "House chocolate", "price": 5, "description": "Dark chocolate melted into steamed milk." }
+      ]
+    },
+    {
+      "title": "From the oven",
+      "items": [
+        { "name": "Butter croissant", "price": 4.25, "description": "Laminated over three days. Crisp outside, soft inside." },
+        { "name": "Almond croissant", "price": 5.25, "description": "Twice-baked and filled with almond cream." },
+        { "name": "Cardamom bun", "price": 4.5, "description": "Swedish-style, sticky and topped with pearl sugar." }
+      ]
+    },
+    {
+      "title": "Brunch",
+      "items": [
+        { "name": "Eggs on sourdough", "price": 12, "description": "Soft scrambled eggs, chives and brown butter." },
+        { "name": "Ricotta toast", "price": 10, "description": "Whipped ricotta, honey and toasted hazelnuts." },
+        { "name": "Steak and eggs", "price": 19, "description": "Flat iron steak, two fried eggs and crispy potatoes." }
+      ]
+    }
+  ],
+  "openingHours": [
+    { "day": "Monday", "cafe": "07:30–15:00", "dinner": "Closed" },
+    { "day": "Tuesday", "cafe": "07:30–15:00", "dinner": "17:30–22:30" },
+    { "day": "Wednesday", "cafe": "07:30–15:00", "dinner": "17:30–22:30" },
+    { "day": "Thursday", "cafe": "07:30–15:00", "dinner": "17:30–22:30" },
+    { "day": "Friday", "cafe": "07:30–15:00", "dinner": "17:30–23:30" },
+    { "day": "Saturday", "cafe": "08:30–16:00", "dinner": "17:00–23:30" },
+    { "day": "Sunday", "cafe": "08:30–16:00", "dinner": "17:00–21:30" }
+  ]
+}

@@ -1,0 +1,13 @@
+# Dependencies (added in Step 2 when we create the backend)
+node_modules/
+
+# Secrets: NEVER commit these
+.env
+.env.local
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Real customer bookings are private - never commit them
+server/data/reservations.json

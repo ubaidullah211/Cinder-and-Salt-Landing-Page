@@ -1,0 +1,327 @@
+/* ==========================================================================
+   base.css  -  the foundations that everything else builds on.
+
+   Contents
+     1. Design tokens (colours, fonts, sizes) as CSS variables
+     2. Colour themes for sections
+     3. Reset and page defaults
+     4. Typography
+     5. Layout helpers
+     6. Buttons
+     7. Accessibility helpers
+     8. Reduced motion
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. DESIGN TOKENS
+   Every colour and size is written ONCE here and used everywhere with
+   var(--name). To re-brand the whole site, change these values only.
+
+   The palette comes from the subject: a classic chophouse (bottle-green
+   leather booths, oxblood red) plus the brown butcher's paper the meat is
+   wrapped in.
+   ========================================================================== */
+:root {
+  /* Colours */
+  --night:    #14231c;  /* bottle green, our "black" */
+  --night-2:  #1b2f25;  /* a lighter green, for alternating dark sections */
+  --deep:     #0e1913;  /* the darkest green, used for the footer */
+  --oxblood:  #5a1b20;  /* deep red */
+  --paper:    #edede4;  /* light background and text on dark */
+  --kraft:    #d8c29d;  /* butcher's paper brown */
+  --espresso: #2b1b12;  /* text on kraft */
+  --butter:   #ecd6a0;  /* the accent colour on dark backgrounds */
+  --error:    #a3262b;
+
+  /* Fonts */
+  --font-display: 'Gloock', Georgia, 'Times New Roman', serif;
+  --font-body: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sizes */
+  --header-height: 76px;
+  --container-width: 1180px;
+
+  /* Animation feel */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+
+/* ==========================================================================
+   2. COLOUR THEMES
+   Each section gets ONE theme class (for example class="section theme-night").
+   The theme sets five variables, and every component inside just uses
+   var(--text), var(--muted), var(--line), var(--accent), var(--on-accent).
+   So a button or a list works on ANY background without extra CSS.
+   ========================================================================== */
+
+/* All the dark themes share the same text colours... */
+.theme-night,
+.theme-night-2,
+.theme-oxblood,
+.theme-deep {
+  --text: var(--paper);
+  --muted: rgba(237, 237, 228, 0.72);
+  --line: rgba(237, 237, 228, 0.2);
+  --accent: var(--butter);
+}
+
+/* ...and each one adds its own background. */
+.theme-night   { --bg: var(--night);   --on-accent: var(--night); }
+.theme-night-2 { --bg: var(--night-2); --on-accent: var(--night-2); }
+.theme-oxblood { --bg: var(--oxblood); --on-accent: var(--oxblood); }
+.theme-deep    { --bg: var(--deep);    --on-accent: var(--deep); }
+
+.theme-paper {
+  --bg: var(--paper);
+  --text: var(--night);
+  --muted: rgba(20, 35, 28, 0.72);
+  --line: rgba(20, 35, 28, 0.2);
+  --accent: var(--oxblood);
+  --on-accent: var(--paper);
+}
+
+.theme-kraft {
+  --bg: var(--kraft);
+  --text: var(--espresso);
+  --muted: rgba(43, 27, 18, 0.75);
+  --line: rgba(43, 27, 18, 0.25);
+  --accent: var(--oxblood);
+  --on-accent: var(--paper);
+}
+
+
+/* ==========================================================================
+   3. RESET AND PAGE DEFAULTS
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* padding and borders no longer make elements wider */
+}
+
+html {
+  scroll-behavior: smooth;                                 /* smooth jumps to #sections */
+  scroll-padding-top: calc(var(--header-height) + 1rem);   /* stops the fixed header covering titles */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;   /* 17px */
+  line-height: 1.65;
+  color: var(--text, var(--paper));
+  background: var(--night);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Stops the page scrolling behind the mobile menu or the photo viewer */
+body.no-scroll {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+
+/* ==========================================================================
+   4. TYPOGRAPHY
+   Gloock only comes in one weight, so we set font-weight: 400 on headings.
+   (Otherwise the browser fakes a bold that looks muddy.)
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  text-wrap: balance; /* nicer line breaks in headlines */
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+.section-title {
+  /* clamp(smallest, preferred, largest): the size grows with the screen */
+  font-size: clamp(2.4rem, 5.2vw, 4.25rem);
+}
+
+
+/* ==========================================================================
+   5. LAYOUT HELPERS
+   ========================================================================== */
+
+/* Centres content and keeps it from getting too wide on big screens */
+.container {
+  width: min(100% - 2.5rem, var(--container-width));
+  margin-inline: auto;
+}
+
+/* Every big block of the page is a "section" */
+.section {
+  padding-block: clamp(4.5rem, 10vw, 8.5rem);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* The title + intro paragraph at the top of some sections */
+.section-head {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.section-intro {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (min-width: 56rem) {
+  .section-head {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 4rem;
+  }
+}
+
+
+/* ==========================================================================
+   6. BUTTONS
+   Use:  <a class="btn btn--primary">  or  <a class="btn btn--ghost">
+   Colours come from the theme, so the same class works on every section.
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;                /* big enough to tap comfortably on a phone */
+  padding: 0.8rem 1.6rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn--primary:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.btn--ghost {
+  border-color: rgba(237, 237, 228, 0.55);
+  color: var(--paper);
+}
+
+.btn--ghost:hover {
+  background: var(--paper);
+  border-color: var(--paper);
+  color: var(--night);
+}
+
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+
+/* ==========================================================================
+   7. ACCESSIBILITY HELPERS
+   ========================================================================== */
+
+/* A clear ring around whatever the keyboard is focused on */
+:focus-visible {
+  outline: 2px solid var(--accent, var(--butter));
+  outline-offset: 3px;
+}
+
+/* Hidden on screen but still read out by screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* "Skip to content": appears only when a keyboard user presses Tab first */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 200;
+  padding: 0.75rem 1.25rem;
+  background: var(--butter);
+  color: var(--night);
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+
+/* ==========================================================================
+   8. REDUCED MOTION
+   Some people get dizzy or distracted by animation and turn it off in their
+   device settings. We respect that by switching all animation off.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+  }
+}
